@@ -17,5 +17,16 @@
     "express": "^4.18.2",
     "pug": "^3.0.2",
     "ws": "^8.10.0"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kang-mincheol/zoom_clone_pjt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/kang-mincheol/zoom_clone_pjt/issues"
+  },
+  "homepage": "https://github.com/kang-mincheol/zoom_clone_pjt#readme"
 }
