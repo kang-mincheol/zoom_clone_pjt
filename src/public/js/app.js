@@ -2,7 +2,7 @@ const messageList = document.querySelector("ul");
 const nickForm = document.querySelector("#nick");
 const messageForm = document.querySelector("#message");
 const socket = new WebSocket(`ws://${window.location.host}`);
-// const socket = new WebSocket("ws://localhost:3000");
+
 function makeMessage(type, payload) {
     const msg = {type, payload}
     return JSON.stringify(msg);
