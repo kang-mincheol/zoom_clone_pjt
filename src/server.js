@@ -22,7 +22,13 @@ wss.on("connection", (socket) => {
     console.log("Connected to Browser ✅");
     socket.on("close", () => console.log("Disconnected from the Browser ❌"));
     socket.on("message", (message) => {
-        sockets.forEach((aSocket) => aSocket.send(message.toString()));
+        const parsed = JSON.parse(message);
+        if(parsed.type === "new_message") {
+            sockets.forEach((aSocket) => aSocket.send(parsed.payload));
+        } else if(parsed.type === "nickname") {
+            console.log(parsed.payload);
+        }
+        
     });
 });
 
