@@ -1,5 +1,5 @@
 import http from "http";
-import SocketIO from "socket.io";
+import SocketIO, { Socket } from "socket.io";
 import express from "express";
 
 const app = express();
@@ -13,8 +13,13 @@ app.get("/*", (_, res) => res.render("/"));
 const httpServer = http.createServer(app);
 const wsServer = SocketIO(httpServer);
 
-wsServer.on("connection", socket => {
-    console.log(socket);
+wsServer.on("connection", (socket) => {
+    socket.on("enter_room", (msg, done) => {
+        console.log(msg);
+        setTimeout(() => {
+            done();
+        }, 10000);
+    });
 });
 
 
